@@ -1,0 +1,164 @@
+.donations-page {
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+}
+
+.donations-header {
+  margin-bottom: 3.5rem;
+}
+
+.donation-main-icon {
+  font-size: 3.5rem;
+  color: #ef4444;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 10px rgba(239, 68, 68, 0.15));
+}
+
+.donations-header h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.donations-header p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+}
+
+.donations-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .donations-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.donation-card {
+  padding: 2.5rem;
+}
+
+.quick-amounts-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 480px) {
+  .quick-amounts-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.quick-amount-btn {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--text-main);
+  transition: all var(--transition-fast);
+}
+
+.quick-amount-btn:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.quick-amount-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.donate-btn {
+  padding: 12px;
+  font-size: 1rem;
+}
+
+/* Success Receipt */
+.success-receipt-icon {
+  font-size: 4rem;
+  color: var(--secondary-dark);
+  margin-bottom: 1.25rem;
+}
+
+.success-receipt-msg {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.receipt-box {
+  background-color: rgba(0,0,0,0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+body.dark-theme .receipt-box {
+  background-color: rgba(255,255,255,0.02);
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: var(--text-main);
+}
+
+.receipt-row:last-child {
+  margin-bottom: 0;
+}
+
+.receipt-amount-hl {
+  color: #e65100;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+/* Pitch Sidebar */
+.donation-pitch-sidebar {
+  height: fit-content;
+  border-left: 4px solid var(--secondary-color);
+}
+
+.donation-pitch-sidebar h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.pitch-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pitch-bullets li {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.pitch-bullets li strong {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}

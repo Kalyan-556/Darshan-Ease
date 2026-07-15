@@ -1,0 +1,92 @@
+.admin-table-img {
+  width: 60px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+}
+
+.action-buttons-flex {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.action-btn:hover {
+  transform: scale(1.05);
+}
+
+.action-btn.edit-btn {
+  color: var(--accent-color);
+}
+
+.action-btn.edit-btn:hover {
+  background-color: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+.action-btn.delete-btn {
+  color: #E53E3E;
+}
+
+.action-btn.delete-btn:hover {
+  background-color: #E53E3E;
+  color: white;
+  border-color: #E53E3E;
+}
+
+/* Modal sizing overrides */
+.temple-modal-content {
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  color: var(--text-main);
+}
+
+.temple-modal-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.form-group-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+@media (max-width: 576px) {
+  .form-group-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}

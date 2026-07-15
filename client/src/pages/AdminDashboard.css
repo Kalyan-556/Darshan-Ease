@@ -1,0 +1,253 @@
+.admin-layout-wrapper {
+  display: flex;
+  min-height: calc(100vh - 65px);
+  background-color: var(--bg-color);
+}
+
+.admin-content-pane {
+  flex: 1;
+  padding: 2.5rem;
+  overflow-y: auto;
+}
+
+.pane-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.pane-header-flex h2 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+/* Stats Cards Grid */
+.stats-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 1.5rem;
+}
+
+.stat-card-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.stat-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-title {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.stat-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-top: 2px;
+}
+
+/* Borders and backgrounds of icons based on colors */
+.border-blue {
+  border-left: 4px solid var(--accent-color);
+}
+.border-blue .stat-card-icon {
+  background-color: rgba(21,101,192,0.1);
+  color: var(--accent-color);
+}
+
+.border-green {
+  border-left: 4px solid var(--primary-color);
+}
+.border-green .stat-card-icon {
+  background-color: rgba(46,125,50,0.1);
+  color: var(--primary-color);
+}
+
+.border-orange {
+  border-left: 4px solid #E65100;
+}
+.border-orange .stat-card-icon {
+  background-color: rgba(230,81,0,0.1);
+  color: #E65100;
+}
+
+.border-yellow {
+  border-left: 4px solid #FFD54F;
+}
+.border-yellow .stat-card-icon {
+  background-color: rgba(255,213,79,0.1);
+  color: var(--secondary-dark);
+}
+
+.border-gold {
+  border-left: 4px solid #D4AF37;
+}
+.border-gold .stat-card-icon {
+  background-color: rgba(212,175,55,0.1);
+  color: #B8860B;
+}
+
+/* Custom CSS Bar Charts */
+.admin-charts-section {
+  margin-bottom: 2.5rem;
+}
+
+.admin-charts-section h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-main);
+}
+
+.custom-bar-chart-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 240px;
+  padding: 10px 20px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.chart-bar-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px;
+}
+
+.chart-bar-wrapper {
+  height: 180px;
+  width: 16px;
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.chart-bar-fill {
+  width: 100%;
+  background: linear-gradient(180deg, var(--primary-light), var(--primary-color));
+  border-radius: 10px;
+  animation: barGrow 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  height: 0;
+}
+
+@keyframes barGrow {
+  to { height: var(--height); }
+}
+
+.chart-bar-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.chart-bar-tooltip {
+  position: absolute;
+  top: -30px;
+  background-color: var(--text-main);
+  color: var(--bg-color);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  pointer-events: none;
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-bar-group:hover .chart-bar-tooltip {
+  opacity: 1;
+}
+
+/* Tables split details */
+.admin-tables-split {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 992px) {
+  .admin-tables-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.admin-table-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--text-main);
+}
+
+.admin-table-wrapper {
+  overflow-x: auto;
+}
+
+.admin-dash-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.admin-dash-table th, .admin-dash-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.admin-dash-table th {
+  background-color: var(--bg-color);
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.dash-role-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.dash-role-badge.admin {
+  background-color: rgba(21,101,192,0.1);
+  color: var(--accent-color);
+}
+
+.dash-role-badge.organizer {
+  background-color: rgba(230,81,0,0.1);
+  color: #E65100;
+}
+
+.dash-role-badge.user {
+  background-color: rgba(74,85,104,0.1);
+  color: #4A5568;
+}

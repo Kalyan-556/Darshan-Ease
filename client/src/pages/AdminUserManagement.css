@@ -1,0 +1,15 @@
+.role-selector-input {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-main);
+  outline: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.role-selector-input:focus {
+  border-color: var(--primary-color);
+}

@@ -1,0 +1,140 @@
+.payment-page {
+  padding-top: 2.5rem;
+  padding-bottom: 5rem;
+}
+
+.payment-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 2.5rem;
+}
+
+@media (max-width: 900px) {
+  .payment-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.payment-header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 15px;
+  margin-bottom: 2rem;
+}
+
+.payment-header h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.payment-header p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.payment-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 2rem;
+}
+
+.method-tile {
+  border: 1.5px solid var(--border-color);
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.method-tile svg {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.method-tile:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.method-tile.active {
+  border-color: var(--primary-color);
+  background-color: rgba(46,125,50,0.06);
+  color: var(--primary-color);
+}
+
+.method-tile.active svg {
+  color: var(--primary-color);
+}
+
+.method-fields-container {
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.01);
+  margin-bottom: 2rem;
+}
+
+body.dark-theme .method-fields-container {
+  background-color: rgba(255,255,255,0.01);
+}
+
+.field-helper-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.card-minor-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.payment-btn {
+  padding: 14px;
+  font-size: 1.05rem;
+}
+
+.security-badges {
+  margin-top: 15px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Processing Simulator Screen */
+.payment-processing {
+  padding: 4rem 1.5rem;
+}
+
+.spinner-icon.loading {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.payment-processing h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.payment-processing p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}

@@ -1,0 +1,136 @@
+.footer {
+  background-color: #1e293b;
+  color: #f1f5f9;
+  border-top: 4px solid var(--primary-color);
+  font-size: 0.9rem;
+}
+
+body.dark-theme .footer {
+  background-color: #0f172a;
+  border-top-color: var(--secondary-color);
+}
+
+.footer-top {
+  padding: 4rem 1.5rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 3rem;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1.2rem;
+}
+
+.footer-logo-icon {
+  color: var(--secondary-color);
+  font-size: 2rem;
+}
+
+.footer-desc {
+  color: #94a3b8;
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+.footer-links-section h3, .footer-contact-section h3 {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.footer-links-section h3::after, .footer-contact-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--secondary-color);
+}
+
+.footer-links-section ul {
+  list-style: none;
+}
+
+.footer-links-section ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links-section ul li a {
+  color: #94a3b8;
+  transition: color var(--transition-fast);
+}
+
+.footer-links-section ul li a:hover {
+  color: var(--secondary-color);
+}
+
+.contact-list {
+  list-style: none;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 1rem;
+  color: #94a3b8;
+}
+
+.contact-icon {
+  color: var(--secondary-color);
+  margin-top: 4px;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.footer-bottom {
+  background-color: #0f172a;
+  border-top: 1px solid #334155;
+  padding: 1.5rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+body.dark-theme .footer-bottom {
+  background-color: #020617;
+  border-top-color: #1e293b;
+}
+
+.heart-icon {
+  color: #ef4444;
+  margin: 0 2px;
+}
+
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

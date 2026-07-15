@@ -1,0 +1,111 @@
+.notifications-page {
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.notifications-card-container {
+  width: 100%;
+  max-width: 700px;
+  padding: 2.5rem;
+}
+
+.notifications-header-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 15px;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+body.dark-theme .notifications-header-title {
+  color: var(--secondary-color);
+}
+
+.notifications-header-title h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+}
+
+.header-bell-icon {
+  font-size: 1.8rem;
+}
+
+.notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.notification-item {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  transition: all var(--transition-fast);
+}
+
+.notification-item.unread {
+  border-left: 4px solid var(--primary-color);
+  background-color: rgba(46,125,50,0.02);
+}
+
+.notification-item.read {
+  opacity: 0.75;
+}
+
+.notif-body h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.notif-body p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.notif-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.btn-mark-read {
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-color);
+  color: var(--primary-color);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.btn-mark-read:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+  transform: scale(1.05);
+}
+
+.empty-notifications {
+  padding: 4rem 1.5rem;
+}
+
+.inbox-icon {
+  font-size: 3rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
