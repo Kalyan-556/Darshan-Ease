@@ -162,7 +162,7 @@ The React application uses **React Router DOM v6** for view management.
 *   `/signup` -> [Signup.jsx](file:///C:/Users/ADMIN/.gemini/antigravity-ide/client/src/pages/Signup.jsx) (Devotee or Organizer registration)
 *   `/forgot-password` -> [ForgotPassword.jsx](file:///C:/Users/ADMIN/.gemini/antigravity-ide/client/src/pages/ForgotPassword.jsx)
 *   `/reset-password` -> [ResetPassword.jsx](file:///C:/Users/ADMIN/.gemini/antigravity-ide/client/src/pages/ResetPassword.jsx)
-*   `/temples` -> [TempleListing.jsx](file:///C:/Users/ADMIN/.gemini/antigravity-ide/client/src/pages/TempleListing.jsx) (Search results, sidebar filter pane)
+*   `/temples` -> [TempleListing.jsx](file:///C:/Users/ADMIN/.gemini/antigravity-ide/scratch/darshanease/client/src/pages/TempleListing.jsx) (Search results, sidebar filter pane) - Fetches and displays the directory of 27 major temples in India.
 *   `/temples/:id` -> [TempleDetails.jsx](file:///C:/Users/ADMIN/.gemini/antigravity-ide/client/src/pages/TempleDetails.jsx) (Temple description, history, reviews list, slot check redirects)
 
 ### Protected Routes (Devotees)
