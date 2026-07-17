@@ -1,0 +1,19 @@
+{
+  "name": "darshanease-root",
+  "version": "1.0.0",
+  "description": "Smart Temple Darshan Ticket Booking Platform",
+  "main": "server/server.js",
+  "scripts": {
+    "install-server": "npm install --prefix server",
+    "install-client": "npm install --prefix client",
+    "install-all": "npm run install-server && npm run install-client",
+    "server": "npm run start --prefix server",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "author": "DarshanEase Devotee Team",
+  "license": "MIT"
+}
