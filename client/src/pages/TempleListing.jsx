@@ -118,7 +118,13 @@ const TempleListing = () => {
               temples.map(temple => (
                 <div key={temple._id} className="temple-item-card glass-card">
                   <div className="temple-item-image">
-                    <img src={temple.image} alt={temple.name} />
+                    <img 
+                      src={temple.image} 
+                      alt={temple.name} 
+                      onError={(e) => {
+                        e.target.src = 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=800';
+                      }}
+                    />
                     <span className="temple-state-badge">{temple.state}</span>
                   </div>
                   <div className="temple-item-details">

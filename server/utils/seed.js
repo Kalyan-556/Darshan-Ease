@@ -542,7 +542,25 @@ const seedData = async () => {
   ];
 
   const seededTemples = [];
-  for (let temple of templesToCreate) {
+  for (let idx = 0; idx < templesToCreate.length; idx++) {
+    let temple = templesToCreate[idx];
+    // If using the general template image, give it a unique signature and search term
+    if (temple.image.includes('photo-1542856391-010fb87dcfed') || !temple.image) {
+      const keywords = temple.name.toLowerCase().split(' ').slice(0, 2).join(',');
+      temple.image = `https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=800&sig=${idx}&q=${keywords}`;
+    }
+    
+    // Process gallery items
+    if (temple.gallery) {
+      temple.gallery = temple.gallery.map((g, gIdx) => {
+        if (g.includes('photo-1542856391-010fb87dcfed') || !g) {
+          const keywords = temple.name.toLowerCase().split(' ').slice(0, 2).join(',');
+          return `https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=800&sig=${idx}_gal_${gIdx}&q=${keywords}`;
+        }
+        return g;
+      });
+    }
+    
     const t = await Temple.create(temple);
     seededTemples.push(t);
   }

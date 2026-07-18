@@ -118,7 +118,7 @@ const TempleDetails = () => {
   return (
     <div className="temple-details-page">
       {/* Banner */}
-      <div className="temple-hero" style={{ backgroundImage: `url(${temple.image})` }}>
+      <div className="temple-hero" style={{ backgroundImage: `url(${temple.image}), url(https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=1200)` }}>
         <div className="hero-overlay"></div>
         <div className="hero-content container">
           <span className="hero-state">{temple.state}</span>
@@ -151,7 +151,13 @@ const TempleDetails = () => {
               <div className="gallery-grid">
                 {temple.gallery.map((img, index) => (
                   <a key={index} href={img} target="_blank" rel="noreferrer" className="gallery-item">
-                    <img src={img} alt={`Gallery ${index + 1}`} />
+                    <img 
+                      src={img} 
+                      alt={`Gallery ${index + 1}`} 
+                      onError={(e) => {
+                        e.target.src = 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=800';
+                      }}
+                    />
                   </a>
                 ))}
               </div>
