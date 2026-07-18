@@ -27,6 +27,7 @@ server/uploads/mockDb/*.json
 server/uploads/emailLogs/*.txt
 server/uploads/profiles/*
 server/uploads/temples/*
+templates/
 !server/uploads/mockDb/.gitkeep
 !server/uploads/emailLogs/.gitkeep
 !server/uploads/profiles/.gitkeep
