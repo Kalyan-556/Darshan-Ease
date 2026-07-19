@@ -18,7 +18,7 @@ const verifyToken = (req, res, next) => {
     if (err.name === 'TokenExpiredError') {
       return res.status(401).json({ success: false, message: 'Token expired. Please login again.', code: 'TOKEN_EXPIRED' });
     }
-    return res.status(403).json({ success: false, message: 'Invalid or malformed token.' });
+    return res.status(401).json({ success: false, message: 'Invalid or malformed token.' });
   }
 };
 

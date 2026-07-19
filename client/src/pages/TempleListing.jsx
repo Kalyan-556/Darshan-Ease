@@ -5,6 +5,39 @@ import api from '../services/api';
 import SkeletonLoader from '../components/SkeletonLoader';
 import './TempleListing.css';
 
+const TempleListItemCard = React.memo(({ temple }) => {
+  return (
+    <div className="temple-item-card glass-card">
+      <div className="temple-item-image">
+        <img 
+          src={temple.image.startsWith('http') ? temple.image : `http://localhost:5000${temple.image}`} 
+          alt={temple.name} 
+          onError={(e) => {
+            e.target.src = 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=800';
+          }}
+        />
+        <span className="temple-state-badge">{temple.state}</span>
+      </div>
+      <div className="temple-item-details">
+        <h3>{temple.name}</h3>
+        <p className="temple-item-loc"><FaMapMarkerAlt /> {temple.location}, {temple.district}</p>
+        <p className="temple-item-desc">{temple.description.slice(0, 160)}...</p>
+        
+        <div className="temple-item-meta">
+          <div className="meta-info">
+            <FaClock />
+            <span>Hours: {temple.openingTime} - {temple.closingTime}</span>
+          </div>
+          <Link to={`/temples/${temple._id}`} className="btn btn-primary">
+            <span>Book Darshan</span>
+            <FaChevronRight />
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+});
+
 const TempleListing = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
@@ -116,34 +149,7 @@ const TempleListing = () => {
               </div>
             ) : (
               temples.map(temple => (
-                <div key={temple._id} className="temple-item-card glass-card">
-                  <div className="temple-item-image">
-                    <img 
-                      src={temple.image.startsWith('http') ? temple.image : `http://localhost:5000${temple.image}`} 
-                      alt={temple.name} 
-                      onError={(e) => {
-                        e.target.src = 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=800';
-                      }}
-                    />
-                    <span className="temple-state-badge">{temple.state}</span>
-                  </div>
-                  <div className="temple-item-details">
-                    <h3>{temple.name}</h3>
-                    <p className="temple-item-loc"><FaMapMarkerAlt /> {temple.location}, {temple.district}</p>
-                    <p className="temple-item-desc">{temple.description.slice(0, 160)}...</p>
-                    
-                    <div className="temple-item-meta">
-                      <div className="meta-info">
-                        <FaClock />
-                        <span>Hours: {temple.openingTime} - {temple.closingTime}</span>
-                      </div>
-                      <Link to={`/temples/${temple._id}`} className="btn btn-primary">
-                        <span>Book Darshan</span>
-                        <FaChevronRight />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                <TempleListItemCard key={temple._id} temple={temple} />
               ))
             )}
           </div>

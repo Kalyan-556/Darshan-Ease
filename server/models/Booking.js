@@ -9,16 +9,16 @@ const PassengerSchema = new mongoose.Schema({
 });
 
 const BookingSchema = new mongoose.Schema({
-  bookingId: { type: String, required: true, unique: true },
-  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-  templeId: { type: mongoose.Schema.Types.ObjectId, ref: 'Temple', required: true },
-  slotId: { type: mongoose.Schema.Types.ObjectId, ref: 'DarshanSlot', required: true },
+  bookingId: { type: String, required: true, unique: true, index: true },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true, index: true },
+  templeId: { type: mongoose.Schema.Types.ObjectId, ref: 'Temple', required: true, index: true },
+  slotId: { type: mongoose.Schema.Types.ObjectId, ref: 'DarshanSlot', required: true, index: true },
   persons: [PassengerSchema], // Array of traveler details
   totalAmount: { type: Number, required: true },
   bookingStatus: { type: String, enum: ['Pending', 'Confirmed', 'Cancelled'], default: 'Confirmed' },
   paymentStatus: { type: String, enum: ['Pending', 'Paid', 'Failed', 'Refunded'], default: 'Paid' },
   ticketQRCode: { type: String, default: '' },
-  createdAt: { type: Date, default: Date.now }
+  createdAt: { type: Date, default: Date.now, index: true }
 });
 
 const MongooseBooking = mongoose.model('Booking', BookingSchema);

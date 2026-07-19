@@ -28,6 +28,19 @@ exports.bookSlot = async (req, res, next) => {
       return res.status(400).json({ success: false, message: `Only ${slot.availableSeats} seats left for this slot.` });
     }
 
+    // Prevent duplicate bookings for the same slot by the same user
+    const existingBooking = await Booking.findOne({
+      userId: req.user.id,
+      slotId,
+      bookingStatus: 'Confirmed'
+    });
+    if (existingBooking) {
+      return res.status(400).json({
+        success: false,
+        message: 'You have already reserved a ticket for this specific time slot. Check your dashboard bookings.'
+      });
+    }
+
     const totalAmount = slot.price * count;
 
     // Generate unique Booking ID

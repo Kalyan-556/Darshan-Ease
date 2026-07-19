@@ -3,8 +3,8 @@ const dbConfig = require('../config/db');
 const mockDb = require('../services/mockDbService');
 
 const DarshanSlotSchema = new mongoose.Schema({
-  templeId: { type: mongoose.Schema.Types.ObjectId, ref: 'Temple', required: true },
-  date: { type: String, required: true }, // Format: YYYY-MM-DD
+  templeId: { type: mongoose.Schema.Types.ObjectId, ref: 'Temple', required: true, index: true },
+  date: { type: String, required: true, index: true }, // Format: YYYY-MM-DD
   time: { type: String, required: true }, // Format: "08:00 AM - 10:00 AM"
   capacity: { type: Number, required: true },
   availableSeats: { type: Number, required: true },
@@ -12,6 +12,8 @@ const DarshanSlotSchema = new mongoose.Schema({
   status: { type: String, enum: ['Active', 'Cancelled', 'Full'], default: 'Active' },
   createdAt: { type: Date, default: Date.now }
 });
+
+DarshanSlotSchema.index({ templeId: 1, date: 1 });
 
 const MongooseDarshanSlot = mongoose.model('DarshanSlot', DarshanSlotSchema);
 

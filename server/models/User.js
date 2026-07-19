@@ -4,13 +4,13 @@ const mockDb = require('../services/mockDbService');
 
 const UserSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true, index: true },
   phone: { type: String, required: true },
   password: { type: String, required: true },
   role: { type: String, enum: ['USER', 'ORGANIZER', 'ADMIN'], default: 'USER' },
   profileImage: { type: String, default: '' },
   address: { type: String, default: '' },
-  createdAt: { type: Date, default: Date.now }
+  createdAt: { type: Date, default: Date.now, index: true }
 });
 
 const MongooseUser = mongoose.model('User', UserSchema);

@@ -4,6 +4,34 @@ import { FaSearch, FaGopuram, FaMapMarkerAlt, FaCalendarCheck, FaHeart, FaChevro
 import api from '../services/api';
 import './LandingPage.css';
 
+const TempleCard = React.memo(({ temple }) => {
+  return (
+    <div className="temple-card glass-card">
+      <div className="temple-card-image">
+        <img 
+          src={temple.image.startsWith('http') ? temple.image : `http://localhost:5000${temple.image}`} 
+          alt={temple.name} 
+          onError={(e) => {
+            e.target.src = 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=800';
+          }}
+        />
+        <span className="state-tag">{temple.state}</span>
+      </div>
+      <div className="temple-card-body">
+        <h3>{temple.name}</h3>
+        <p className="temple-loc"><FaMapMarkerAlt /> {temple.location}</p>
+        <p className="temple-desc-short">{temple.description.slice(0, 100)}...</p>
+        <div className="temple-card-footer">
+          <Link to={`/temples/${temple._id}`} className="btn btn-outline">
+            <span>View Details</span>
+            <FaChevronRight />
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+});
+
 const LandingPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [stateFilter, setStateFilter] = useState('');
@@ -84,29 +112,7 @@ const LandingPage = () => {
               <div className="loading-placeholder">Loading featured temples...</div>
             ) : (
               temples.map(temple => (
-                <div key={temple._id} className="temple-card glass-card">
-                  <div className="temple-card-image">
-                    <img 
-                      src={temple.image.startsWith('http') ? temple.image : `http://localhost:5000${temple.image}`} 
-                      alt={temple.name} 
-                      onError={(e) => {
-                        e.target.src = 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=800';
-                      }}
-                    />
-                    <span className="state-tag">{temple.state}</span>
-                  </div>
-                  <div className="temple-card-body">
-                    <h3>{temple.name}</h3>
-                    <p className="temple-loc"><FaMapMarkerAlt /> {temple.location}</p>
-                    <p className="temple-desc-short">{temple.description.slice(0, 100)}...</p>
-                    <div className="temple-card-footer">
-                      <Link to={`/temples/${temple._id}`} className="btn btn-outline">
-                        <span>View Details</span>
-                        <FaChevronRight />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                <TempleCard key={temple._id} temple={temple} />
               ))
             )}
           </div>

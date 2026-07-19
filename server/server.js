@@ -47,6 +47,15 @@ const apiLimiter = rateLimit({
 });
 app.use('/api/', apiLimiter);
 
+// Strict authentication rate limiter to prevent brute-force attacks
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 20, // Limit each IP to 20 login/register requests per window
+  message: { success: false, message: 'Too many login or registration attempts. Please try again after 15 minutes.' }
+});
+app.use('/api/auth/login', authLimiter);
+app.use('/api/auth/register', authLimiter);
+
 // Routes mounting
 app.use('/api/auth', authRoutes);
 app.use('/api/temples', templeRoutes);
