@@ -119,7 +119,7 @@ const TempleListing = () => {
                 <div key={temple._id} className="temple-item-card glass-card">
                   <div className="temple-item-image">
                     <img 
-                      src={temple.image} 
+                      src={temple.image.startsWith('http') ? temple.image : `http://localhost:5000${temple.image}`} 
                       alt={temple.name} 
                       onError={(e) => {
                         e.target.src = 'https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=800';

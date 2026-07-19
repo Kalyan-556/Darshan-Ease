@@ -115,10 +115,12 @@ const TempleDetails = () => {
     ? (feedbacks.reduce((sum, f) => sum + f.rating, 0) / feedbacks.length).toFixed(1)
     : '5.0';
 
+  const heroImg = temple.image.startsWith('http') ? temple.image : `http://localhost:5000${temple.image}`;
+
   return (
     <div className="temple-details-page">
       {/* Banner */}
-      <div className="temple-hero" style={{ backgroundImage: `url(${temple.image}), url(https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=1200)` }}>
+      <div className="temple-hero" style={{ backgroundImage: `url(${heroImg}), url(https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&q=80&w=1200)` }}>
         <div className="hero-overlay"></div>
         <div className="hero-content container">
           <span className="hero-state">{temple.state}</span>
