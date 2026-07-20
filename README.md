@@ -118,10 +118,10 @@ The seeding script registers three default accounts with the password `password1
 
 ## 🏛️ Seeded Shrines Directory
 
-The seeder populates **12 famous temple destinations** across India:
+The seeder populates **27 famous temple destinations** across India:
 1.  **Kedarnath Temple** (Rudraprayag, Uttarakhand)
 2.  **Tirumala Venkateswara Temple** (Tirupati, Andhra Pradesh)
-3.  **Golden Temple** (Amritsar, Punjab)
+3.  **Golden Temple (Harmandir Sahib)** (Amritsar, Punjab)
 4.  **Somnath Temple** (Veraval, Gujarat)
 5.  **Kashi Vishwanath Temple** (Varanasi, Uttar Pradesh)
 6.  **Vaishno Devi Temple** (Katra, Jammu and Kashmir)
@@ -131,3 +131,18 @@ The seeder populates **12 famous temple destinations** across India:
 10. **Badrinath Temple** (Chamoli, Uttarakhand)
 11. **Brihadeeswara Temple** (Thanjavur, Tamil Nadu)
 12. **Akshardham Temple** (East Delhi, Delhi)
+13. **Konark Sun Temple** (Puri, Odisha)
+14. **Padmanabhaswamy Temple** (Trivandrum, Kerala)
+15. **Sabarimala Sastha Temple** (Pathanamthitta, Kerala)
+16. **Ramanathaswamy Temple** (Ramanathapuram, Tamil Nadu)
+17. **Kamakhya Temple** (Kamrup, Assam)
+18. **Dwarkadhish Temple** (Devbhumi Dwarka, Gujarat)
+19. **Mahakaleshwar Jyotirlinga** (Ujjain, Madhya Pradesh)
+20. **Shirdi Sai Baba Temple** (Ahmednagar, Maharashtra)
+21. **Amarnath Cave Temple** (Anantnag, Jammu and Kashmir)
+22. **Murudeshwar Temple** (Uttara Kannada, Karnataka)
+23. **Ranakpur Jain Temple** (Pali, Rajasthan)
+24. **Yamunotri Temple** (Uttarkashi, Uttarakhand)
+25. **Gangotri Temple** (Uttarkashi, Uttarakhand)
+26. **Bhimashankar Jyotirlinga** (Pune, Maharashtra)
+27. **Khajuraho Lakshmana Temple** (Chhatarpur, Madhya Pradesh)
